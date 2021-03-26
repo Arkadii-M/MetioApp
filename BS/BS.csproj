@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\TemperatureManager.cs" />
-    <Compile Include="Interface\ITemperatureManager.cs" />
+    <Compile Include="Concrete\AuthManager.cs" />
+    <Compile Include="Concrete\ClientInfoManager.cs" />
+    <Compile Include="Concrete\ClientManager.cs" />
+    <Compile Include="Concrete\TokenManager.cs" />
+    <Compile Include="Interface\IAuthManager.cs" />
+    <Compile Include="Interface\IClientInfoManager.cs" />
+    <Compile Include="Interface\IClientManager.cs" />
+    <Compile Include="Interface\IErrorManager.cs" />
+    <Compile Include="Interface\ITokenManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +61,13 @@
       <Project>{82027195-0721-491a-85c2-192581cb4a21}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorInformer\Informer.csproj">
+      <Project>{ef613e90-d7ee-4d69-ae20-d0dfd94407f6}</Project>
+      <Name>Informer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

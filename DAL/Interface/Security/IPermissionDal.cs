@@ -9,7 +9,7 @@ namespace DAL.Interface
 {
     public interface IPermissionDal
     {
-        PermissionDTO GetByID(int id);
+        List<PermissionDTO> GetByID(int id);
         List<PermissionDTO> GetAll();
         PermissionDTO Create(PermissionDTO dto);
 

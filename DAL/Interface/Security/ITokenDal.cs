@@ -10,7 +10,7 @@ namespace DAL.Interface
     public interface ITokenDal
     {
         TokenDTO GetByID(int id);
-        TokenDTO GetByToken(Guid token);
+        List<TokenDTO> GetByToken(Guid token);
         List<TokenDTO> GetAll();
         TokenDTO Create(TokenDTO dto);
         TokenDTO Update(TokenDTO dto);

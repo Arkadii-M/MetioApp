@@ -1,7 +1,9 @@
 ﻿using DAL.Interface;
 using DTO;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,9 +32,26 @@ namespace DAL.Concrete
             throw new NotImplementedException();
         }
 
-        public PermissionDTO GetByID(int id)
+        public List<PermissionDTO> GetByID(int id)
         {
-            throw new NotImplementedException();
+            using (MySqlConnection conn = new MySqlConnection(this.connectionString))
+            using (MySqlCommand comm = conn.CreateCommand())
+            {
+                comm.CommandText = "select * from Permissions where id = @id";
+                comm.Parameters.Clear();
+                comm.Parameters.AddWithValue("@id", id);
+                conn.Open();
+                var reader = comm.ExecuteReader();
+
+                var to_ret = new List<PermissionDTO>();
+                while (reader.Read())
+                {
+                    to_ret.Add( new PermissionDTO { id = (int)reader["id"], role_id = (int)reader["role_id"] });
+                }
+
+                return to_ret;
+
+            }
         }
 
         public PermissionDTO Update(PermissionDTO dto)

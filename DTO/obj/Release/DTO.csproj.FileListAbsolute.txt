@@ -1,0 +1,5 @@
+C:\Users\Programmer\source\repos\MetioRestAPI\DTO\bin\Release\DTO.dll
+C:\Users\Programmer\source\repos\MetioRestAPI\DTO\bin\Release\DTO.pdb
+C:\Users\Programmer\source\repos\MetioRestAPI\DTO\obj\Release\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Programmer\source\repos\MetioRestAPI\DTO\obj\Release\DTO.dll
+C:\Users\Programmer\source\repos\MetioRestAPI\DTO\obj\Release\DTO.pdb

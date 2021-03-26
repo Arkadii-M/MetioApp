@@ -43,12 +43,15 @@
   <ItemGroup>
     <Compile Include="BatteryStatusDTO.cs" />
     <Compile Include="BatteryVoltageDTO.cs" />
-    <Compile Include="BmpModuleDTO.cs" />
+    <Compile Include="ClientDTO.cs" />
+    <Compile Include="ClientInfoDTO.cs" />
+    <Compile Include="Modules\BmpModuleDTO.cs" />
+    <Compile Include="MongoDTO\ErrorDTO.cs" />
     <Compile Include="Security\DeviceDTO.cs" />
     <Compile Include="Security\PermissionDTO.cs" />
-    <Compile Include="PrecipitationModuleDTO.cs" />
+    <Compile Include="Modules\PrecipitationModuleDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RainModuleDTO.cs" />
+    <Compile Include="Modules\RainModuleDTO.cs" />
     <Compile Include="Security\RoleDTO.cs" />
     <Compile Include="Security\TokenDTO.cs" />
   </ItemGroup>

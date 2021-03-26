@@ -1,7 +1,9 @@
 ﻿using DAL.Interface;
 using DTO;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +34,25 @@ namespace DAL.Concrete
 
         public DeviceDTO GetByID(int id)
         {
-            throw new NotImplementedException();
+            using (MySqlConnection conn = new MySqlConnection(this.connectionString))
+            using (MySqlCommand comm = conn.CreateCommand())
+            {
+                comm.CommandText = "select * from Devices where id = @id";
+                comm.Parameters.Clear();
+                comm.Parameters.AddWithValue("@id", id);
+                conn.Open();
+                var reader = comm.ExecuteReader();
+                
+                if(reader.Read())
+                {
+                    return new DeviceDTO { id = (int)reader["id"], device_name = reader["device_name"].ToString() };
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
         }
 
         public DeviceDTO Update(DeviceDTO dto)
